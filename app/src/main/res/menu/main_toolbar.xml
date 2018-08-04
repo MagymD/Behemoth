@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_add_channel"
+        android:title="Добавить канал"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_delete_channel"
+        android:enabled="false"
+        android:title="Удалить канал"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_up"
+        android:icon="@drawable/ic_up"
+        android:title="Вверх списка"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_refresh"
+        android:padding="12dp"
+        android:title="Обновить"
+        app:showAsAction="always" />
+
+</menu>
