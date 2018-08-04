@@ -3,7 +3,7 @@ package magym.rssreader.main
 import magym.rssreader.model.Channel
 import magym.rssreader.model.RequestNewChannel
 
-interface IMainPresenter {
+interface IMainView {
 
     // Toolbar
 

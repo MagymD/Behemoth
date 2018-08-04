@@ -11,7 +11,7 @@ import magym.rssreader.network.RequestData
 import magym.rssreader.utils.getMenuId
 import java.util.*
 
-class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult {
+class MainPresenter(private val iMainView: IMainView) : INetworkResult {
 
     private var channels: MutableList<Channel> = ArrayList()
     private var activeChannelsUrl: MutableList<String> = ArrayList()
@@ -29,10 +29,10 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
             requestItemsFromDb(false)
             requestData()
         } else {
-            iMainPresenter.updateItemsFromViewModel()
+            iMainView.updateItemsFromViewModel()
             activeChannelsUrl.addAll(mainViewModel.activeChannelsUrl)
-            iMainPresenter.setTitleToolbar(getTitleByActiveChannelsUrlChannel())
-            iMainPresenter.updateDataSetChanged()
+            iMainView.setTitleToolbar(getTitleByActiveChannelsUrlChannel())
+            iMainView.updateDataSetChanged()
             updateAllCounter()
         }
     }
@@ -48,7 +48,7 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
     }
 
     fun requestData(url: String = "") {
-        if (!iMainPresenter.hasConnection()) {
+        if (!iMainView.hasConnection()) {
             requestItemsFromDb(true)
             return
         }
@@ -78,13 +78,13 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
             }
 
         } else {
-            iMainPresenter.channelsNotFound()
+            iMainView.channelsNotFound()
             setRefreshing(false)
         }
     }
 
     fun addChannelsToMenu() {
-        channels.forEach { iMainPresenter.addChannelToMenu(it, false) }
+        channels.forEach { iMainView.addChannelToMenu(it, false) }
     }
 
     fun selectAllChannels() {
@@ -95,7 +95,7 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
         launch(UI) { insertElementsIntoView(result.await(), true) }
 
         setActiveChannelsUrl()
-        iMainPresenter.setTitleToolbar("Все новости")
+        iMainView.setTitleToolbar("Все новости")
         goToTop(false)
     }
 
@@ -126,8 +126,8 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
 
             launch(UI) {
                 wait.await()
-                iMainPresenter.deleteChannelFromMenu(channel.getMenuId())
-                iMainPresenter.checkAllChannelsFromMenu()
+                iMainView.deleteChannelFromMenu(channel.getMenuId())
+                iMainView.checkAllChannelsFromMenu()
                 selectAllChannels()
             }
         }
@@ -140,16 +140,16 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
                 .forEach { return }
 
         channels.add(channel)
-        iMainPresenter.addChannelToMenu(channel, true)
+        iMainView.addChannelToMenu(channel, true)
         selectChannel(channel)
-        iMainPresenter.createSnackbar("Канал добавлен: \"" + channel.titleChannel + "\"")
+        iMainView.createSnackbar("Канал добавлен: \"" + channel.titleChannel + "\"")
     }
 
     private fun setRefreshing(refresh: Boolean) {
-        iMainPresenter.setRefreshing(refresh)
+        iMainView.setRefreshing(refresh)
 
         if (refresh || activeChannelsUrl.size == 1) {
-            iMainPresenter.enableItemToolbarDeleteChannel(!refresh)
+            iMainView.enableItemToolbarDeleteChannel(!refresh)
         }
     }
 
@@ -169,9 +169,9 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
         if (url == "") channels.forEach { activeChannelsUrl.add(it.url) }
         else activeChannelsUrl.add(url)
 
-        if (activeChannelsUrl.size == 0) iMainPresenter.channelsNotFound()
+        if (activeChannelsUrl.size == 0) iMainView.channelsNotFound()
 
-        iMainPresenter.setActiveChannelsUrlIntoViewModel(activeChannelsUrl)
+        iMainView.setActiveChannelsUrlIntoViewModel(activeChannelsUrl)
     }
 
     private fun getTitleByActiveChannelsUrlChannel(): String {
@@ -203,7 +203,7 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
     }
 
     private fun channelInList(channel: Channel) {
-        iMainPresenter.createSnackbar("Данный канал уже есть в списке")
+        iMainView.createSnackbar("Данный канал уже есть в списке")
         val result = async {
             mainModel.getItems(channel.id)
         }
@@ -216,7 +216,7 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
     private fun insertElementsIntoView(data: MutableList<RequestNewChannel>, setRefresh: Boolean) {
         updateCounter()
 
-        iMainPresenter.insertElementsIntoView(data)
+        iMainView.insertElementsIntoView(data)
         if (setRefresh) setRefreshing(false)
     }
 
@@ -238,13 +238,13 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
             else mainModel.getSizeChannel()
         }
 
-        launch(UI) { iMainPresenter.updateCounter(id, result.await().toString()) }
+        launch(UI) { iMainView.updateCounter(id, result.await().toString()) }
     }
 
     private fun selectChannel(channel: Channel) {
         setActiveChannelsUrl(channel.url)
 
-        with(iMainPresenter) {
+        with(iMainView) {
             goToTop(true)
 
             setTitleToolbar(channel.titleChannel)
@@ -253,13 +253,13 @@ class MainPresenter(private val iMainPresenter: IMainPresenter) : INetworkResult
     }
 
     private fun goToTop(enable: Boolean) {
-        with(iMainPresenter) {
+        with(iMainView) {
             scrollToPosition(0)
             showToolbar()
             enableItemToolbarDeleteChannel(enable)
         }
     }
 
-    override fun showException(t: Throwable, urlChannel: String) = iMainPresenter.showException(t, urlChannel)
+    override fun showException(t: Throwable, urlChannel: String) = iMainView.showException(t, urlChannel)
 
 }

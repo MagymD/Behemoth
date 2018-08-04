@@ -40,7 +40,7 @@ import javax.xml.stream.XMLStreamException
 
 class MainActivity : AppCompatActivity(),
         SwipeRefreshLayout.OnRefreshListener, NavigationView.OnNavigationItemSelectedListener,
-        IOnClick, IMainPresenter {
+        IOnClick, IMainView {
 
     private lateinit var mainViewModel: MainViewModel
     private lateinit var toolbarMenu: Menu
@@ -318,7 +318,6 @@ class MainActivity : AppCompatActivity(),
             imm.hideSoftInputFromWindow(input!!.windowToken, 0)
         }
     }
-
 
     private fun alertDialogDeleteChannel() {
         val builder = AlertDialog.Builder(this)
