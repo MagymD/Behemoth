@@ -1,12 +1,12 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
 import android.arch.lifecycle.ViewModel
-import magym.rssreader.model.RequestNewChannel
+import magym.behemoth.model.RequestNewChannel
 
 class MainViewModel : ViewModel() {
 
-    var news: List<RequestNewChannel> = ArrayList()
+    internal var news: List<RequestNewChannel> = ArrayList()
 
-    var activeChannelsUrl: List<String> = ArrayList()
+    internal var activeChannelsUrl: List<String> = ArrayList()
 
 }

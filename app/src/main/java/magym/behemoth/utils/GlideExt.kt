@@ -1,4 +1,4 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
@@ -9,7 +9,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-import magym.rssreader.R
+import magym.behemoth.R
 
 fun ImageView.load(url: String, idErrorImage: Int) {
     Glide.with(this) // TODO: centerInside

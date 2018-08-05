@@ -1,4 +1,4 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
 import android.app.AlertDialog
 import android.arch.lifecycle.ViewModelProviders
@@ -21,15 +21,15 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_app_bar.*
 import kotlinx.android.synthetic.main.main_content.*
-import magym.rssreader.R
-import magym.rssreader.image.PhotoActivity
-import magym.rssreader.main.recyclerview.ItemAdapter
-import magym.rssreader.model.Channel
-import magym.rssreader.model.RequestNewChannel
-import magym.rssreader.utils.createTextView
-import magym.rssreader.utils.getMenuId
-import magym.rssreader.utils.loadMenuIco
-import magym.rssreader.utils.showSnackbar
+import magym.behemoth.R
+import magym.behemoth.image.PhotoActivity
+import magym.behemoth.main.recyclerview.ItemAdapter
+import magym.behemoth.model.Channel
+import magym.behemoth.model.RequestNewChannel
+import magym.behemoth.utils.createTextView
+import magym.behemoth.utils.getMenuId
+import magym.behemoth.utils.loadMenuIco
+import magym.behemoth.utils.showSnackbar
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -211,10 +211,7 @@ class MainActivity : AppCompatActivity(),
 
     // -------------------------------------------------------------------------------------- //
 
-    override fun openChannel(idChannel: Int) {
-        mainPresenter.findChannelByIdChannel(idChannel)
-    }
-
+    override fun openChannel(idChannel: Int) = mainPresenter.findChannelByIdChannel(idChannel)
 
     override fun openBrowser(link: String) {
         setRefreshing(true)
@@ -232,13 +229,9 @@ class MainActivity : AppCompatActivity(),
 
     // -------------------------------------------------------------------------------------- //
 
-    override fun updateDataSetChanged() {
-        recycler_view.adapter.notifyDataSetChanged()
-    }
+    override fun updateDataSetChanged() = recycler_view.adapter.notifyDataSetChanged()
 
-    override fun scrollToPosition(position: Int) {
-        recycler_view.scrollToPosition(position)
-    }
+    override fun scrollToPosition(position: Int) = recycler_view.scrollToPosition(position)
 
     // -------------------------------------------------------------------------------------- //
 
@@ -267,9 +260,7 @@ class MainActivity : AppCompatActivity(),
 
     // -------------------------------------------------------------------------------------- //
 
-    override fun createSnackbar(text: String) {
-        recycler_view.showSnackbar(text)
-    }
+    override fun createSnackbar(text: String) = recycler_view.showSnackbar(text)
 
     private fun createSnackbarWithUrl(text: String, urlChannel: String) {
         recycler_view.showSnackbar("$text: \"$urlChannel\"")

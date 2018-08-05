@@ -1,4 +1,4 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
 interface IOnClick {
 

@@ -1,4 +1,4 @@
-package magym.rssreader.model
+package magym.behemoth.model
 
 class RequestNewChannel {
 

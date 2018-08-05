@@ -1,6 +1,6 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
-import magym.rssreader.model.Channel
+import magym.behemoth.model.Channel
 
 interface INetworkResult {
 

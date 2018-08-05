@@ -1,4 +1,4 @@
-package magym.rssreader.main.recyclerview
+package magym.behemoth.main.recyclerview
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -6,21 +6,22 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.github.marlonlom.utilities.timeago.TimeAgo
-import magym.rssreader.R
-import magym.rssreader.model.RequestNewChannel
-import magym.rssreader.utils.fromHtml
-import magym.rssreader.utils.load
+import magym.behemoth.R
+import magym.behemoth.model.RequestNewChannel
+import magym.behemoth.utils.fromHtml
+import magym.behemoth.utils.load
 
 class ItemViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-    var itemChannel: RelativeLayout = v.findViewById<View>(R.id.item_channel) as RelativeLayout
-    var imageChannel: ImageView = v.findViewById<View>(R.id.item_image_channel) as ImageView
-    var date: TextView = v.findViewById<View>(R.id.item_date) as TextView
-    var browser: ImageView = v.findViewById<View>(R.id.item_browser) as ImageView
-    var title: TextView = v.findViewById<View>(R.id.item_title) as TextView
-    var description: TextView = v.findViewById<View>(R.id.item_description) as TextView
-    var image: ImageView = v.findViewById<View>(R.id.item_image) as ImageView
+    private val imageChannel: ImageView = v.findViewById<View>(R.id.item_image_channel) as ImageView
+    private val date: TextView = v.findViewById<View>(R.id.item_date) as TextView
+    private val title: TextView = v.findViewById<View>(R.id.item_title) as TextView
+    private val description: TextView = v.findViewById<View>(R.id.item_description) as TextView
 
-    fun bind(news: List<RequestNewChannel>, position: Int) {
+    internal val itemChannel: RelativeLayout = v.findViewById<View>(R.id.item_channel) as RelativeLayout
+    internal val browser: ImageView = v.findViewById<View>(R.id.item_browser) as ImageView
+    internal val image: ImageView = v.findViewById<View>(R.id.item_image) as ImageView
+
+    internal fun bind(news: List<RequestNewChannel>, position: Int) {
         date.text = TimeAgo.using(news[position].dateLong) // TODO: Обновлять поле, если значения не равны
         description.text = news[position].description.fromHtml()
         title.text = news[position].title.fromHtml()

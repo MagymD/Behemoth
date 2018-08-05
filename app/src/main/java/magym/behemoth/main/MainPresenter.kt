@@ -1,14 +1,14 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
 import android.text.TextUtils
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
-import magym.rssreader.R
-import magym.rssreader.model.Channel
-import magym.rssreader.model.RequestNewChannel
-import magym.rssreader.network.RequestData
-import magym.rssreader.utils.getMenuId
+import magym.behemoth.R
+import magym.behemoth.model.Channel
+import magym.behemoth.model.RequestNewChannel
+import magym.behemoth.network.RequestData
+import magym.behemoth.utils.getMenuId
 import java.util.*
 
 class MainPresenter(private val iMainView: IMainView) : INetworkResult {

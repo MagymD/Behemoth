@@ -1,24 +1,24 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
-import magym.rssreader.base.DatabaseManager
-import magym.rssreader.model.Channel
+import magym.behemoth.base.DatabaseManager
+import magym.behemoth.model.Channel
 
 class MainModel {
 
     private val databaseManager = DatabaseManager()
 
-    fun insertChannel(channel: Channel, url: String) = databaseManager.insertChannel(channel, url)
+    internal fun insertChannel(channel: Channel, url: String) = databaseManager.insertChannel(channel, url)
 
-    fun getChannels(): List<Channel> = databaseManager.getChannels()
+    internal fun getChannels(): List<Channel> = databaseManager.getChannels()
 
-    fun deleteChannel(idChannel: Int) = databaseManager.deleteChannel(idChannel)
+    internal fun deleteChannel(idChannel: Int) = databaseManager.deleteChannel(idChannel)
 
-    fun getAllItems() = databaseManager.getAllItems()
+    internal fun getAllItems() = databaseManager.getAllItems()
 
-    fun getItems(idChannel: Int) = databaseManager.getItems(idChannel)
+    internal fun getItems(idChannel: Int) = databaseManager.getItems(idChannel)
 
-    fun getSizeChannel(idChannel: Int) = databaseManager.getSizeChannel(idChannel)
+    internal fun getSizeChannel(idChannel: Int) = databaseManager.getSizeChannel(idChannel)
 
-    fun getSizeChannel() = databaseManager.getSizeChannel()
+    internal fun getSizeChannel() = databaseManager.getSizeChannel()
 
 }

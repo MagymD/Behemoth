@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="magym.rssreader">
+    package="magym.behemoth">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".base.App"
+        android:allowBackup="true"
         android:icon="@drawable/ic_launcher_hippo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_hippo"

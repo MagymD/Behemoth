@@ -1,5 +1,5 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
-import magym.rssreader.model.Channel
+import magym.behemoth.model.Channel
 
 fun Channel.getMenuId() = this.id

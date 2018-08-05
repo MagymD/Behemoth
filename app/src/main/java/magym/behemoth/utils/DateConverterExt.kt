@@ -1,4 +1,4 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
 import java.text.ParseException
 import java.text.SimpleDateFormat

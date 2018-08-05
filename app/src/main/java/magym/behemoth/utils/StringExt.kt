@@ -1,4 +1,4 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
 import android.os.Build
 import android.text.Html

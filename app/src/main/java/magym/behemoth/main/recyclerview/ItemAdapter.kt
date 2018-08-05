@@ -1,11 +1,11 @@
-package magym.rssreader.main.recyclerview
+package magym.behemoth.main.recyclerview
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import magym.rssreader.R
-import magym.rssreader.main.IOnClick
-import magym.rssreader.model.RequestNewChannel
+import magym.behemoth.R
+import magym.behemoth.main.IOnClick
+import magym.behemoth.model.RequestNewChannel
 
 class ItemAdapter(private val news: ArrayList<RequestNewChannel>,
                   private val iOnClick: IOnClick)

@@ -1,7 +1,7 @@
-package magym.rssreader.main
+package magym.behemoth.main
 
-import magym.rssreader.model.Channel
-import magym.rssreader.model.RequestNewChannel
+import magym.behemoth.model.Channel
+import magym.behemoth.model.RequestNewChannel
 
 interface IMainView {
 

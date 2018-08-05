@@ -1,4 +1,4 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
 import android.support.design.widget.Snackbar
 import android.view.View

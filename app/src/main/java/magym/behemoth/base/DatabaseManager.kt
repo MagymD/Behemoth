@@ -1,8 +1,8 @@
-package magym.rssreader.base
+package magym.behemoth.base
 
-import magym.rssreader.model.Channel
-import magym.rssreader.model.New
-import magym.rssreader.utils.dateToLong
+import magym.behemoth.model.Channel
+import magym.behemoth.model.New
+import magym.behemoth.utils.dateToLong
 
 class DatabaseManager {
 

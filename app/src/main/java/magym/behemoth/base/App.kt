@@ -1,4 +1,4 @@
-package magym.rssreader.base
+package magym.behemoth.base
 
 import android.app.Application
 import android.arch.persistence.room.Room
@@ -33,14 +33,10 @@ class App : Application() {
         val initializerBuilder = Stetho.newInitializerBuilder(this)
 
         // Enable Chrome DevTools
-        initializerBuilder.enableWebKitInspector(
-                Stetho.defaultInspectorModulesProvider(this)
-        )
+        initializerBuilder.enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
 
         // Enable command line interface
-        initializerBuilder.enableDumpapp(
-                Stetho.defaultDumperPluginsProvider(this)
-        )
+        initializerBuilder.enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
 
         // Use the InitializerBuilder to generate an Initializer
         val initializer = initializerBuilder.build()

@@ -1,12 +1,12 @@
-package magym.rssreader.image
+package magym.behemoth.image
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
-import magym.rssreader.R
-import magym.rssreader.utils.load
+import magym.behemoth.R
+import magym.behemoth.utils.load
 
 class PhotoActivity : AppCompatActivity() {
 

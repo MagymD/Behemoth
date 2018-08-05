@@ -1,6 +1,6 @@
-package magym.rssreader.network
+package magym.behemoth.network
 
-import magym.rssreader.model.Rss
+import magym.behemoth.model.Rss
 
 sealed class NetworkRequestResult {
 

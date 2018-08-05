@@ -1,6 +1,6 @@
-package magym.rssreader.network
+package magym.behemoth.network
 
-import magym.rssreader.network.api.Api
+import magym.behemoth.network.api.Api
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

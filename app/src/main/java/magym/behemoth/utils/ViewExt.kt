@@ -1,4 +1,4 @@
-package magym.rssreader.utils
+package magym.behemoth.utils
 
 import android.app.Activity
 import android.view.Gravity

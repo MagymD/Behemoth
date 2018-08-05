@@ -1,8 +1,8 @@
-package magym.rssreader.network
+package magym.behemoth.network
 
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
-import magym.rssreader.main.INetworkResult
+import magym.behemoth.main.INetworkResult
 
 class RequestData(private val iNetworkResult: INetworkResult) {
 

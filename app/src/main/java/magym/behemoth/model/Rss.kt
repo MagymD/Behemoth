@@ -1,4 +1,4 @@
-package magym.rssreader.model
+package magym.behemoth.model
 
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root

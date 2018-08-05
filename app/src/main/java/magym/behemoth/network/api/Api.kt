@@ -1,7 +1,7 @@
-package magym.rssreader.network.api
+package magym.behemoth.network.api
 
 import io.reactivex.Single
-import magym.rssreader.model.Rss
+import magym.behemoth.model.Rss
 import retrofit2.http.GET
 import retrofit2.http.Url
 

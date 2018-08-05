@@ -1,8 +1,8 @@
-package magym.rssreader.network
+package magym.behemoth.network
 
 class NetworkRequestManager {
 
-    fun getData(url: String): NetworkRequestResult {
+    internal fun getData(url: String): NetworkRequestResult {
         return NetworkManager.api
                 .getRssData(url)
                 .map<NetworkRequestResult> { NetworkRequestResult.ResultNetwork(it) }

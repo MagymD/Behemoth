@@ -1,4 +1,4 @@
-package magym.rssreader.model
+package magym.behemoth.model
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

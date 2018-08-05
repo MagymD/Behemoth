@@ -1,9 +1,9 @@
-package magym.rssreader.base
+package magym.behemoth.base
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import magym.rssreader.model.Channel
-import magym.rssreader.model.New
+import magym.behemoth.model.Channel
+import magym.behemoth.model.New
 
 @Database(entities = [(New::class), (Channel::class)], version = 1)
 abstract class AppDatabase : RoomDatabase() {

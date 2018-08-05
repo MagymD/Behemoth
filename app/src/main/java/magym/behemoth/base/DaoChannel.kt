@@ -1,10 +1,10 @@
-package magym.rssreader.base
+package magym.behemoth.base
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
-import magym.rssreader.model.Channel
+import magym.behemoth.model.Channel
 
 @Dao
 interface DaoChannel {
