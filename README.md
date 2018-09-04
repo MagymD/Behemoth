@@ -11,6 +11,4 @@ Behemoth is an application designed to read RSS news feeds.
 * TimeAgo
 
 ## Screenshots:
-![All channels](http://imagehost.cc/images/2018/09/04/Allchannels.png)
-![Channel](http://imagehost.cc/images/2018/09/04/Channel.png)
-![Menu](http://imagehost.cc/images/2018/09/04/Menu.png)
+![All channels](http://imagehost.cc/images/2018/09/04/Allchannels.png)![Channel](http://imagehost.cc/images/2018/09/04/Channel.png)![Menu](http://imagehost.cc/images/2018/09/04/Menu.png)
